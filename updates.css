@@ -1,0 +1,18 @@
+.unit-card .avatar{width:40px;height:45px;display:block;object-fit:contain;filter:drop-shadow(0 2px 1px #35443977)}
+.room .room-name{z-index:2;top:6px;font-size:13px}
+.room-map{position:absolute;inset:30px 5px 18px;border:2px solid #4a6680;border-radius:8px;background:linear-gradient(#17283c,#253a47);overflow:hidden}
+.room-map:before,.room-map:after{content:"";position:absolute;top:0;bottom:0;width:5px;background:#afae93;z-index:2}
+.room-map:before{left:0}.room-map:after{right:0}
+.room-map .mini-gate{position:absolute;z-index:2;display:grid;place-items:center;height:16px;border:2px solid #dce7d4;border-radius:4px;color:#192d39;font:900 10px Nunito;line-height:1;white-space:nowrap;box-shadow:0 2px #102331}
+.room-map .mini-gate:before,.room-map .mini-gate:after{content:"";position:absolute;top:-6px;bottom:-6px;width:3px;background:#adaf9a}.room-map .mini-gate:before{left:-6px}.room-map .mini-gate:after{right:-6px}
+.room-map .g1{left:7%;top:27%;width:34%;background:#5cdb89}.room-map .g2{left:58%;top:27%;width:34%;background:#63d0d5}.room-map .g3{left:28%;top:51%;width:23%;background:#ef7c83}.room-map .g3.pad{background:#f3c76f}.room-map .g4{left:54%;top:60%;width:34%;background:#f09c65}.room-map .g4.shield{background:#7aafe7}.room-map .g5{left:12%;top:76%;width:28%;background:#75d3a3}
+.room-map .mini-gate.moving{outline:1px dashed #f9e7b2;outline-offset:2px;animation:gate-sweep 2.8s ease-in-out infinite alternate}
+.room-map .g2.moving{animation-direction:alternate-reverse;animation-duration:2.5s}
+.room-map .g4.moving{animation-name:buff-sweep;animation-duration:2.1s;animation-direction:alternate-reverse}
+@keyframes gate-sweep{from{transform:translateX(-18%)}to{transform:translateX(18%)}}
+@keyframes buff-sweep{from{transform:translateX(-25%)}to{transform:translateX(25%)}}
+.room-map .collector{position:absolute;bottom:2px;left:32%;width:36%;height:10px;border:2px solid #d9bb80;border-radius:7px;background:#e9d4a5}
+.room-map .mini-rail{position:absolute;bottom:8px;width:35%;height:5px;background:#b6ad91}.room-map .mini-rail.left{left:1%;transform:rotate(15deg);transform-origin:right}.room-map .mini-rail.right{right:1%;transform:rotate(-15deg);transform-origin:left}
+.room .room-icon,.room .room-gates,.room .room-foot{display:none}
+.drop-hud{align-items:start}.drop-count img{width:29px;height:29px}.drop-countdown{border:2px solid #19304a;border-radius:12px;background:#f5dda2;color:#26394b;padding:6px 10px;min-width:105px;text-align:center;font:900 12px Nunito;box-shadow:0 3px #172b3d}
+.game-shell{touch-action:none}

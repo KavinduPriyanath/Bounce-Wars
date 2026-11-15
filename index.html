@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#172b42">
+  <meta name="description" content="Bounce Wars: draft an army, bounce through gates, and battle an AI rival.">
+  <title>Bounce Wars</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="updates.css">
+</head>
+<body>
+  <main id="app">
+    <div class="game-shell">
+      <header class="scorebar">
+        <div class="side blue"><span class="crest">⚔</span><div><strong>YOU</strong><small id="playerHearts">♥ ♥ ♥ ♥</small></div></div>
+        <div class="round-badge"><span>ROUND</span><b id="roundLabel">1</b></div>
+        <div class="side red"><div><strong>RIVAL AI</strong><small id="enemyHearts">♥ ♥ ♥ ♥</small></div><span class="crest">♜</span></div>
+      </header>
+      <div class="phase-header"><span id="phaseEyebrow">BOUNCE WARS</span><h1 id="phaseTitle">Build your army</h1><p id="phaseHint">Choose your challenge to begin.</p></div>
+      <div id="gameArea" class="game-area">
+        <canvas id="gameCanvas" aria-label="Game arena"></canvas>
+        <div id="roomOverlay" class="room-overlay hidden">
+          <div class="room-heading"><span>CHOOSE A ROOM</span><small id="pickCounter">PICK 1 OF 3</small></div>
+          <div id="rooms" class="rooms"></div>
+          <div class="drag-note">Drag a unit card into a room</div>
+        </div>
+        <div id="dropHud" class="drop-hud hidden">
+          <div class="drop-count"><img id="dropUnitIcon" src="assets/ant.svg" alt=""><b id="dropRemaining">1</b><small>TO DROP</small></div>
+          <div id="dropCountdown" class="drop-countdown">TOUCH TO START</div>
+        </div>
+        <div id="battleHud" class="battle-hud hidden"><span id="battleMessage">Armies advancing…</span><span id="battleTimer"></span></div>
+        <div id="centerNotice" class="center-notice hidden"></div>
+      </div>
+      <footer id="bottomPanel" class="bottom-panel">
+        <div class="panel-heading"><b id="panelTitle">YOUR DECK</b><span id="armyCount">0 in army</span></div>
+        <div id="cards" class="cards"></div>
+        <div id="panelTip" class="panel-tip">Every card begins with 1 unit.</div>
+      </footer>
+      <div id="modal" class="modal-backdrop">
+        <div class="modal-card">
+          <div class="modal-emblem">✦</div>
+          <div class="kicker">PORTRAIT ARMY BRAWLER</div>
+          <h2 id="modalTitle">Bounce Wars</h2>
+          <p id="modalText">Choose a difficulty. Draft a unit into a room, steer the pipe, and grow your army through the gates. After three drops, battle begins.</p>
+          <div id="difficultyChoices" class="difficulty-choices">
+            <button data-difficulty="easy">Easy <small>Relaxed rival</small></button>
+            <button data-difficulty="medium" class="selected">Medium <small>Even match</small></button>
+            <button data-difficulty="hard">Hard <small>Sharp rival</small></button>
+          </div>
+          <button id="modalButton" class="primary">START MATCH <span>→</span></button>
+        </div>
+      </div>
+      <div id="dragGhost" class="drag-ghost hidden"></div>
+    </div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
